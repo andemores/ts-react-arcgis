@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>Hello React!</title>
-    </head>
-    <body>
-        <div id="example"></div>
 
-        <!-- Dependencies -->
-        <script src="./node_modules/react/dist/react.js"></script>
-        <script src="./node_modules/react-dom/dist/react-dom.js"></script>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://js.arcgis.com/4.4/esri/css/main.css">
+    <title>Hello React!</title>
 
-        <!-- Main -->
-        <script src="./dist/bundle.js"></script>
-    </body>
+    <style>
+        html,
+        body,
+        #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="example"></div>
+    <div id="viewDiv"></div>
+    <!-- Dependencies -->
+    <script src="./node_modules/react/dist/react.js"></script>
+    <script src="./node_modules/react-dom/dist/react-dom.js"></script>
+
+    <!-- Main -->
+    <script src="./dist/bundle.js"></script>
+
+</body>
+
 </html>
