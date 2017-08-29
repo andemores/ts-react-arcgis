@@ -41,7 +41,7 @@ export class Esri2DMap extends React.Component<Esri2DMapProps, undefined> {
     }
 
     // add types in arrow functions
-    componentDidMount() {
+    componentWillMount() {
         console.log("Map Will Mounted");
 
         let mapElmId = this.props.containerId;

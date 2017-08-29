@@ -4,11 +4,11 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import { GeocapApp } from "./components/App";
+import { GeocapApp } from "./components/GeocapApp";
 
 
 ReactDOM.render(
-    <GeocapApp compiler="TypeScript" framework="React" />,
+    <GeocapApp companyName="Geocap" appName="Subsurface Server" />,
     document.getElementById("root")
 );
 

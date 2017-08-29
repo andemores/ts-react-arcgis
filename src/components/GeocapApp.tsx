@@ -4,7 +4,7 @@ import * as React from "react";
 
 import { Esri2DMap } from "./Esri2DMap";
 
-export interface GeocapAppProps { compiler: string; framework: string; }
+export interface GeocapAppProps { appName: string; companyName: string; }
 
 
 
@@ -13,7 +13,7 @@ export interface GeocapAppProps { compiler: string; framework: string; }
 export class GeocapApp extends React.Component<GeocapAppProps, undefined> {
     render() {
         return (<div>
-            <h1>Hello from {this.props.compiler} and {this.props.framework}!</h1>
+            <h1>{this.props.appName} by {this.props.companyName}</h1>
             <Esri2DMap containerId="viewDiv"></Esri2DMap>
         </div>
         );
