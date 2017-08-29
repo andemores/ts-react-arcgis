@@ -1,10 +1,11 @@
 {
   "name": "ts-webpack-react",
   "version": "1.0.0",
-  "description": "",
+  "description": "Using Typescript and ArcGIS with React and Webpack",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,8 @@
   "devDependencies": {
     "awesome-typescript-loader": "^3.2.3",
     "source-map-loader": "^0.2.1",
-    "typescript": "^2.4.2"
+    "typescript": "^2.4.2",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
   }
 }
