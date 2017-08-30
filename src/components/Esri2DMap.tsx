@@ -7,7 +7,7 @@ import * as React from "react";
 export interface Esri2DMapProps { containerId: string }
 
 
-export function createMap(mapContainerId : string) {
+ function createMap(mapContainerId : string) {
     console.log("Creating map at " + mapContainerId);
 
 
