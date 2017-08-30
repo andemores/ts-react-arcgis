@@ -3,7 +3,9 @@
 import * as React from "react";
 
 import { Esri2DMap } from "./Esri2DMap";
+import { Hello } from "./Hello";
 import * as  Geocap from "./ToolBar";
+
 
 // MUI
 import IconMenu from 'material-ui/IconMenu';
@@ -48,7 +50,7 @@ export class GeocapApp extends React.Component<GeocapAppProps, undefined> {
                         </Tab>
                         <Tab label="3D" >
                             <div>
-                                <p>Hello 3</p>
+                                <Hello/>
                             </div>
 
                         </Tab>
