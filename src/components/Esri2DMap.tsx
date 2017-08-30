@@ -4,7 +4,7 @@ import * as esriLoader from 'esri-loader';
 import * as React from "react";
 
 
-export interface Esri2DMapProps { containerId: string }
+export interface Esri2DMapProps { }
 
 
  function createMap(mapContainerId : string) {
@@ -37,14 +37,15 @@ export interface Esri2DMapProps { containerId: string }
 // State is never set so we use the 'undefined' type.
 export class Esri2DMap extends React.Component<Esri2DMapProps, undefined> {
     render() {
-        return <div ></div>;
+        return <div  id="viewDiv" ></div>;
     }
 
     // add types in arrow functions
     componentWillMount() {
         console.log("Map Will Mounted");
 
-        let mapElmId = this.props.containerId;
+        //let mapElmId = this.props.containerId;
+        let mapElmId = "viewDiv";
 
 
         // preload the ArcGIS API

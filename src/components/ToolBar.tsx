@@ -11,14 +11,16 @@ import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-
 
 
 
-import {yellow500, greenA200, red500, blue500} from 'material-ui/styles/colors';
+
+
+import { yellow500, greenA200, red500, blue500 } from 'material-ui/styles/colors';
 import SvgIcon from 'material-ui/SvgIcon';
 
 import ActionHome from 'material-ui/svg-icons/action/home';
 import ActionFlightTakeoff from 'material-ui/svg-icons/action/flight-takeoff';
 
 const iconStyles = {
-  marginRight: 24,
+    marginRight: 24,
 };
 
 import * as injectTapEventPlugin from 'react-tap-event-plugin';
@@ -29,7 +31,10 @@ import * as injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 
-export class ToolbarExamplesSimple extends React.Component {
+
+
+
+export class GCToolbar extends React.Component<null, null> {
     public state: any;
 
     constructor(props: any) {
@@ -43,9 +48,8 @@ export class ToolbarExamplesSimple extends React.Component {
 
     render() {
         return (
-            <Toolbar>
-                 < ActionFlightTakeoff style={iconStyles} />
-                 
+            <Toolbar >
+                <ToolbarTitle text="Geocap" />
                 <ToolbarGroup firstChild={true}>
                     <DropDownMenu value={this.state.value} onChange={this.handleChange}>
                         <MenuItem value={1} primaryText="All Broadcasts" />

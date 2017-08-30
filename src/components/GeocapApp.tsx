@@ -3,7 +3,7 @@
 import * as React from "react";
 
 import { Esri2DMap } from "./Esri2DMap";
-import * as F from "./ToolBar";
+import * as  Geocap from "./ToolBar";
 
 // MUI
 import IconMenu from 'material-ui/IconMenu';
@@ -12,33 +12,49 @@ import FontIcon from 'material-ui/FontIcon';
 import NavigationExpandMoreIcon from 'material-ui/svg-icons/navigation/expand-more';
 import MenuItem from 'material-ui/MenuItem';
 import DropDownMenu from 'material-ui/DropDownMenu';
-import RaisedButton from 'material-ui/RaisedButton';
-import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
+import { Tabs, Tab } from 'material-ui/Tabs';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {deepOrange500} from 'material-ui/styles/colors';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import { deepOrange500 } from 'material-ui/styles/colors';
 
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
-export interface GeocapAppProps { appName: string; companyName: string; }
+export interface GeocapAppProps { appName: string; companyName: string; version: string }
 
-const muiTheme = getMuiTheme({
-    palette: {
-      accent1Color: deepOrange500,
-    },
-  });
 
-// 'HelloProps' describes the shape of props.
+
+/////////////////////////////////
+// const muiTheme = getMuiTheme({
+//     palette: {
+//       accent1Color: deepOrange500,
+//     },
+//   });
+// <Esri2DMap containerId="viewDiv"></Esri2DMap>
+
+// 'HelloProps' describes the shape of props.  
 // State is never set so we use the 'undefined' type.
 export class GeocapApp extends React.Component<GeocapAppProps, undefined> {
     render() {
         return (
-            <MuiThemeProvider  muiTheme={muiTheme}>
+            <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
                 <div>
-                    <RaisedButton label="Default"/>
-                    <F.ToolbarExamplesSimple/>
-                <p>{this.props.appName} by {this.props.companyName}</p>
-                <Esri2DMap containerId="viewDiv"></Esri2DMap>
+                    <Geocap.GCToolbar />
+                    <p>{this.props.appName} {this.props.version} by {this.props.companyName}</p>
+                    <Tabs  >
+                        <Tab label="Map" >
+                            <Esri2DMap ></Esri2DMap>
+                        </Tab>
+                        <Tab label="3D" >
+                            <div>
+                                <p>Hello 3</p>
+                            </div>
+
+                        </Tab>
+
+                    </Tabs>
+
                 </div>
             </MuiThemeProvider>
 
