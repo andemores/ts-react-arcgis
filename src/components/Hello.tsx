@@ -1,5 +1,7 @@
 import * as THREE from 'three';
 
+import { OrbitControls } from 'three-orbitcontrols-ts';
+
 const scene = new THREE.Scene();
 
 import * as React from "react";
@@ -36,6 +38,7 @@ export class Hello extends React.Component<HelloProps, undefined> {
         this. renderer = new THREE.WebGLRenderer();
         this.renderer.setSize( window.innerWidth, window.innerHeight );
 
+        
         var geometry = new THREE.BoxGeometry( 1, 1, 1 );
         var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
         this.cube = new THREE.Mesh( geometry, material );
@@ -46,6 +49,23 @@ export class Hello extends React.Component<HelloProps, undefined> {
                 
         document.getElementById ("threeScene").appendChild( this.renderer.domElement );        
 
+        const controls = new OrbitControls(this.camera, this.renderer.domElement);
+        
+       // How far you can orbit vertically, upper and lower limits. 
+       controls.minPolarAngle = 0;
+       controls.maxPolarAngle = Math.PI;
+        
+        
+       // How far you can dolly in and out ( PerspectiveCamera only ) 
+       controls.minDistance = 0;
+       controls.maxDistance = Infinity;
+        
+    //    this.enableZoom = true; // Set to false to disable zooming 
+    //    this.zoomSpeed = 1.0;
+        
+        
+       controls.enablePan = true; // Set to false to disable panning (ie vertical and horizontal translations) 
+
         var c = this.cube;
         var r = this.renderer;
         var scene_ = this.scene;
@@ -54,8 +74,8 @@ export class Hello extends React.Component<HelloProps, undefined> {
         var animate = function () {
             requestAnimationFrame( animate );
 
-            c.rotation.x += 0.1;
-            c.rotation.y += 0.1;
+            // c.rotation.x += 0.1;
+            // c.rotation.y += 0.1;
 
             r.render(scene_, camera_);
         };
