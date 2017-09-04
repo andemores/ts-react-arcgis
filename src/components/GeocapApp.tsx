@@ -6,7 +6,7 @@ import { Esri2DMap } from "./Esri2DMap";
 import { ThreeCube } from "./ThreeCube";
 import { ShaderTest } from "./ShaderTest";
 import { OceanTest } from "./OceanTest";
-import * as  Geocap from "./ToolBar";
+import { GCToolbar}  from "./ToolBar";
 
 
 // MUI
@@ -44,16 +44,13 @@ export class GeocapApp extends React.Component<GeocapAppProps, undefined> {
         return (
             <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
                 <div>
-                    <Geocap.GCToolbar />
-                    <p>{this.props.appName} {this.props.version} by {this.props.companyName}</p>
+                    <GCToolbar title={ this.props.appName + " " + this.props.version} />
                     <Tabs  >
                         <Tab label="Map" >
                             <Esri2DMap ></Esri2DMap>
                         </Tab>
                         <Tab label="Cube" >
-                            <div>
                                 <ThreeCube color = "blue"></ThreeCube>
-                            </div>
                         </Tab>
                         <Tab label="Shader" >
                             <div>
@@ -61,9 +58,7 @@ export class GeocapApp extends React.Component<GeocapAppProps, undefined> {
                             </div>
                         </Tab>
                         <Tab label="Ocean" >
-                            <div>
                             <OceanTest></OceanTest>
-                            </div>
                         </Tab>
 
                     </Tabs>

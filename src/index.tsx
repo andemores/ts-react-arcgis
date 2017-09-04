@@ -5,7 +5,7 @@ import { GeocapApp } from "./components/GeocapApp";
 
 ReactDOM.render(
 
-    <GeocapApp companyName="Geocap" appName="Subsurface Server" version="1.4" />,
+    <GeocapApp companyName="Geocap" appName="Geocap Subsurface Server" version="1.5" />,
 
     document.getElementById("root")
 );
