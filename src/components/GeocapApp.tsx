@@ -4,6 +4,7 @@ import * as React from "react";
 
 import { Esri2DMap } from "./Esri2DMap";
 import { ThreeCube } from "./ThreeCube";
+import { ShaderTest } from "./ShaderTest";
 import * as  Geocap from "./ToolBar";
 
 
@@ -48,11 +49,15 @@ export class GeocapApp extends React.Component<GeocapAppProps, undefined> {
                         <Tab label="Map" >
                             <Esri2DMap ></Esri2DMap>
                         </Tab>
-                        <Tab label="3D" >
+                        <Tab label="Cube" >
                             <div>
                                 <ThreeCube color = "blue"></ThreeCube>
                             </div>
-
+                        </Tab>
+                        <Tab label="Shader" >
+                            <div>
+                                <ShaderTest></ShaderTest>
+                            </div>
                         </Tab>
 
                     </Tabs>

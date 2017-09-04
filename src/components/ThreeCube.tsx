@@ -1,15 +1,23 @@
-import * as THREE from 'three';
+import THREE = require ('three');
 
-import { OrbitControls } from 'three-orbitcontrols-ts';
+//import { OrbitControls } from 'three-orbitcontrols-ts';
+import "../threeJS/OrbitControls.js"
 
-const scene = new THREE.Scene();
+
+
+
+// <script src="js/libs/stats.min.js"></script>
+// <script src="js/libs/dat.gui.min.js"></script>
+// <script src="js/controls/OrbitControls.js"></script>
+// <script src="js/SimplexNoise.js"></script>
+
+
 
 import * as React from "react";
 
 
 
 export interface ThreeCubeProps { color: string }
-
 
 
 
@@ -22,17 +30,14 @@ export class ThreeCube extends React.Component<ThreeCubeProps, undefined> {
     renderer: THREE.Renderer;
     cube: THREE.Mesh;
 
-    //static counter : number = 0;
+    enableZoom : boolean;
 
-    render() {
-        return <div id="threeScene"></div>
-    }
+    constructor(props: ThreeCubeProps) {
+        super(props);
 
-    // add types in arrow functions
-    componentDidMount() {
-        console.log("Hello Mounted");
         this.scene = new THREE.Scene();
-        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        //this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        this.camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
 
         this.renderer = new THREE.WebGLRenderer();
         this.renderer.setSize(window.innerWidth, window.innerHeight);
@@ -48,9 +53,22 @@ export class ThreeCube extends React.Component<ThreeCubeProps, undefined> {
         this.camera.position.z = 5;
 
 
+
+
+    }
+
+
+    render() {
+        return <div id="threeScene"></div>
+    }
+
+    // add types in arrow functions
+    componentDidMount() {
+        console.log("Hello Mounted ");
+
         document.getElementById("threeScene").appendChild(this.renderer.domElement);
 
-        const controls = new OrbitControls(this.camera, this.renderer.domElement);
+        const controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
 
         // How far you can orbit vertically, upper and lower limits. 
         controls.minPolarAngle = 0;
@@ -61,14 +79,12 @@ export class ThreeCube extends React.Component<ThreeCubeProps, undefined> {
         controls.minDistance = 0;
         controls.maxDistance = Infinity;
 
-        //    this.enableZoom = true; // Set to false to disable zooming 
+        this.enableZoom = true; // Set to false to disable zooming 
         //    this.zoomSpeed = 1.0;
 
 
         controls.enablePan = true; // Set to false to disable panning (ie vertical and horizontal translations) 
 
-
-        var c = this.cube;
         var r = this.renderer;
         var scene_ = this.scene;
         var camera_ = this.camera;
@@ -76,8 +92,8 @@ export class ThreeCube extends React.Component<ThreeCubeProps, undefined> {
         var animate = function () {
             requestAnimationFrame(animate);
 
-            c.rotation.x += 0.1;
-            c.rotation.y += 0.1;
+            // c.rotation.x += 0.1;
+            // c.rotation.y += 0.1;
 
             r.render(scene_, camera_);
         };
