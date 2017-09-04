@@ -1,8 +1,7 @@
-import THREE = require ('three');
+//import THREE = require ('three');
+import * as  THREE from 'three';
 
-//import { OrbitControls } from 'three-orbitcontrols-ts';
 import "../threeJS/OrbitControls.js"
-
 
 
 

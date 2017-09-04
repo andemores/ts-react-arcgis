@@ -1,16 +1,7 @@
 import * as THREE from 'three';
-
 import { OrbitControls } from 'three-orbitcontrols-ts';
-
 // Typescript spesific import syntax since Detector seems to use module.exports
 import Detector = require ("../threeJS/Detector")
-
-
-// <script src="js/libs/stats.min.js"></script>
-// <script src="js/libs/dat.gui.min.js"></script>
-// <script src="js/controls/OrbitControls.js"></script>
-// <script src="js/SimplexNoise.js"></script>
-
 
 
 import * as React from "react";

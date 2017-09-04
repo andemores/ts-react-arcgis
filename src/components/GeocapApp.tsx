@@ -56,7 +56,8 @@ export class GeocapApp extends React.Component<GeocapAppProps, undefined> {
                         </Tab>
                         <Tab label="Shader" >
                             <div>
-                                <ShaderTest></ShaderTest>
+                            <ShaderTest></ShaderTest>
+                                
                             </div>
                         </Tab>
 

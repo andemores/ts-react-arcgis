@@ -1,8 +1,8 @@
-import * as THREE from 'three';
+import * as  THREE from 'three';
 
-import { OrbitControls } from 'three-orbitcontrols-ts';
+import "../threeJS/OrbitControls.js"
 
-const scene = new THREE.Scene();
+
 
 import * as React from "react";
 
@@ -49,7 +49,7 @@ export class Hello extends React.Component<HelloProps, undefined> {
                 
         document.getElementById ("threeScene").appendChild( this.renderer.domElement );        
 
-        const controls = new OrbitControls(this.camera, this.renderer.domElement);
+        const controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
         
        // How far you can orbit vertically, upper and lower limits. 
        controls.minPolarAngle = 0;
