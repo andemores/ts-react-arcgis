@@ -20,8 +20,7 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-tap-event-plugin": "^2.0.1",
-    "three": "^0.87.1",
-    "three-orbitcontrols-ts": "^0.1.2"
+    "three": "^0.87.1"
   },
   "devDependencies": {
     "@types/material-ui": "^0.18.0",

@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { OrbitControls } from 'three-orbitcontrols-ts';
 // Typescript spesific import syntax since Detector seems to use module.exports
 import Detector = require ("../threeJS/Detector")
 
