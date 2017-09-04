@@ -5,6 +5,7 @@ import * as React from "react";
 import { Esri2DMap } from "./Esri2DMap";
 import { ThreeCube } from "./ThreeCube";
 import { ShaderTest } from "./ShaderTest";
+import { OceanTest } from "./OceanTest";
 import * as  Geocap from "./ToolBar";
 
 
@@ -57,7 +58,11 @@ export class GeocapApp extends React.Component<GeocapAppProps, undefined> {
                         <Tab label="Shader" >
                             <div>
                             <ShaderTest></ShaderTest>
-                                
+                            </div>
+                        </Tab>
+                        <Tab label="Ocean" >
+                            <div>
+                            <OceanTest></OceanTest>
                             </div>
                         </Tab>
 
