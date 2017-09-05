@@ -1,7 +1,10 @@
 // Official three npm package
 
 import * as THREE from 'three';
-import "../threeJS/OrbitControls.js"
+import { OrbitControls} from "../threeJS/OrbitControls"
+
+//import "../threeJS/OrbitControls.js"
+//import { OrbitControl } from "../threeJS/OrbitControls"
 
 
 import { Fido } from  "../threeJS/WaterShader";
@@ -89,7 +92,7 @@ export class OceanTest extends React.Component<OceanTestProps, undefined> {
         this.camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 0.5, 3000000 );
         this.camera.position.set( 2000, 750, 2000 );
         //
-        let controls = new THREE.OrbitControls( this.camera, this.renderer.domElement );
+        let controls = new OrbitControls( this.camera, this.renderer.domElement );
         controls.enablePan = false;
         controls.minDistance = 1000.0;
         controls.maxDistance = 5000.0;

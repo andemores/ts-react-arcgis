@@ -78,6 +78,11 @@ export class GCToolbar extends React.Component<ToolbarProps, null> {
         console.log("Dialog closed");
         this.setState({ open: false });
     };
+
+    handleAddUrlChange = (event: object, newValue: string) => {
+        console.log("URL is " + newValue);
+
+    }
     
     handleChange = (event: any, index: number, value: any) => this.setState({ value });
 
@@ -106,11 +111,11 @@ export class GCToolbar extends React.Component<ToolbarProps, null> {
                     open={this.state.open}
                     onRequestClose={this.handleAddServiceClose}
                 >
-                <TextField fullWidth= { true } hintText= "https://geocap.geodata.no/arcgis/rest/services/LosAngeles/Bathymetry/MapServer/0">
+                <TextField fullWidth= { true }  onChange = { this.handleAddUrlChange } hintText= "https://myserver.com/arcgis/rest/services/myservice/MapServer/0">
                     </TextField>
                     
         </Dialog>
-                <FloatingActionButton mini={false} style={style1} onClick={ this.handleAddServiceOpen}>
+                <FloatingActionButton mini={true} style={style1} onClick={ this.handleAddServiceOpen}>
                     <ContentAdd />
                 </FloatingActionButton>
                 <ToolbarTitle text={this.props.title} />
