@@ -3,15 +3,6 @@ import * as  THREE from 'three';
 
 import { OrbitControls} from "../threeJS/OrbitControls"
 
-//import { OrbitControl } from "../threeJS/OrbitControls"
-
-
-
-// <script src="js/libs/stats.min.js"></script>
-// <script src="js/libs/dat.gui.min.js"></script>
-// <script src="js/controls/OrbitControls.js"></script>
-// <script src="js/SimplexNoise.js"></script>
-
 
 
 import * as React from "react";
@@ -65,8 +56,6 @@ export class ThreeCube extends React.Component<ThreeCubeProps, undefined> {
 
     // add types in arrow functions
     componentDidMount() {
-        console.log("Hello Mounted ");
-
         document.getElementById("threeScene").appendChild(this.renderer.domElement);
 
         let  controls = new OrbitControls(this.camera, this.renderer.domElement);

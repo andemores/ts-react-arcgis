@@ -115,7 +115,7 @@ export class GCToolbar extends React.Component<ToolbarProps, null> {
                     </TextField>
                     
         </Dialog>
-                <FloatingActionButton mini={true} style={style1} onClick={ this.handleAddServiceOpen}>
+                <FloatingActionButton mini={false} style={style1} onClick={ this.handleAddServiceOpen}>
                     <ContentAdd />
                 </FloatingActionButton>
                 <ToolbarTitle text={this.props.title} />

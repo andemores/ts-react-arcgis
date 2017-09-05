@@ -2,26 +2,12 @@
 
 import * as THREE from 'three';
 import { OrbitControls} from "../threeJS/OrbitControls"
-
-//import "../threeJS/OrbitControls.js"
-//import { OrbitControl } from "../threeJS/OrbitControls"
-
-
-import { Fido } from  "../threeJS/WaterShader";
-
-
-
-
+import { WaterShader } from  "../threeJS/WaterShader";
 import * as React from "react";
-
 
 
 export interface OceanTestProps {  }
 
-
-
-
- 
 
 // 'HelloProps' describes the shape of props.
 // State is never set so we use the 'undefined' type.
@@ -37,17 +23,9 @@ export class OceanTest extends React.Component<OceanTestProps, undefined> {
 
     constructor(props: OceanTestProps) {
         super(props);
-
-
-
-    
-
-
     }
 
     componentDidMount() {
-        console.log("Shader Test Mounted ");
-
         this.init();
 
         var r = this.renderer;
@@ -58,14 +36,11 @@ export class OceanTest extends React.Component<OceanTestProps, undefined> {
             requestAnimationFrame(animate);
             t.renderThree();
 
-           
-
         };
 
         animate();
         
     }
-
     
 
     init() {
@@ -107,8 +82,8 @@ export class OceanTest extends React.Component<OceanTestProps, undefined> {
         //
         let waterNormals = new THREE.TextureLoader().load( 'textures/waternormals.jpg' );
         waterNormals.wrapS = waterNormals.wrapT = THREE.RepeatWrapping;
-        let gg = new Fido();
-        this.water = new gg.water( this.renderer, this.camera, this.scene, {
+        let waterShader = new WaterShader();
+        this.water = new waterShader.water( this.renderer, this.camera, this.scene, {
             textureWidth: 512,
             textureHeight: 512,
             waterNormals: waterNormals,

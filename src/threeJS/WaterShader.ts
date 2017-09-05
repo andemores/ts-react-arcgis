@@ -324,14 +324,14 @@ THREE_Water.prototype.updateTextureMatrix = function () {
 
 };
 
-export interface FidoProps {
+export interface WaterShaderProps {
 	scene: THREE.Scene;
     camera: THREE.PerspectiveCamera;
     renderer: THREE.WebGLRenderer;
 
 }
 
-export class Fido {
+export class WaterShader {
 	water : any;
 	material : THREE.ShaderMaterial;
 
