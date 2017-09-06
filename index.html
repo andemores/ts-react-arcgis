@@ -3,12 +3,18 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet"    href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
     <link rel="stylesheet" href="https://js.arcgis.com/4.4/esri/css/main.css">
 
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"    rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.js" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.js" />
+
+
+
     <title>Geocap Subsurface Server</title>
 
 
@@ -23,8 +29,8 @@
             margin: 0;
             height: 100%;
             width: 100%;
-
         }
+
         #viewDiv {
             padding: 0;
             margin: 0;
@@ -36,13 +42,24 @@
 
 <body>
     <div id="root"></div>
-    
+
     <!-- Dependencies -->
+    
     <script src="./node_modules/react/dist/react.js"></script>
-    <script src="./node_modules/react-dom/dist/react-dom.js"></script>
+    <script src="./node_modules/react-dom/dist/react-dom.js"></script> 
 
     <!-- Main -->
+
     <script src="./dist/bundle.js"></script>
+
+     
+    <script>
+        //import * as FIDO from "./dist/bundle.js"
+        ReactDOM.render(
+            React.createElement(GeocapApp, { companyName : "Geocap",  appName : "Geocap Subsurface Server" , version :"1.5"  }, null),
+            document.getElementById('root')
+        );
+    </script>
 
 </body>
 
