@@ -1,7 +1,9 @@
 // Authoring libraries in webpack : https://webpack.js.org/guides/author-libraries/
 //
 
-const path = require('path')
+const path = require('path');
+
+const webpack = require('webpack');
 
 
 module.exports = {
@@ -9,8 +11,8 @@ module.exports = {
     output: {
         filename: "bundle.js",
         path: __dirname + "/dist",
-        library : "Geocap",
-        libraryTarget : "var"
+        library: "Geocap",
+        libraryTarget: "var"
     },
 
     // Enable sourcemaps for debugging webpack's output.
@@ -44,5 +46,13 @@ module.exports = {
         contentBase: path.join(__dirname, "."),
         compress: true,
         port: 9000
-      }    
+    },
+
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })        
+    ]    
 };
