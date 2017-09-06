@@ -1,6 +1,5 @@
 // Authoring libraries in webpack : https://webpack.js.org/guides/author-libraries/
 //
-// webpack  --output-library geocap  --output-library-target var
 
 const path = require('path')
 
@@ -9,7 +8,9 @@ module.exports = {
     entry: "./src/index.tsx",
     output: {
         filename: "bundle.js",
-        path: __dirname + "/dist"
+        path: __dirname + "/dist",
+        library : "Geocap",
+        libraryTarget : "var"
     },
 
     // Enable sourcemaps for debugging webpack's output.
