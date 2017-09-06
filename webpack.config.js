@@ -1,3 +1,6 @@
+// Authoring libraries in webpack : https://webpack.js.org/guides/author-libraries/
+//
+// webpack  --output-library geocap  --output-library-target var
 
 const path = require('path')
 

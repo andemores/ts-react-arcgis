@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 // Typescript spesific import syntax since Detector seems to use module.exports
-import Detector = require ("../threeJS/Detector")
+//import Detector = require ("../threeJS/Detector")
+
+import * as Detector from "../threeJS/Detector";
 
 
 import * as React from "react";

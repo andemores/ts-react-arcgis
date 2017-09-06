@@ -10,8 +10,9 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.js" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.js" />
+
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
 
 
 
@@ -43,23 +44,24 @@
 <body>
     <div id="root"></div>
 
-    <!-- Dependencies -->
-    
-    <script src="./node_modules/react/dist/react.js"></script>
-    <script src="./node_modules/react-dom/dist/react-dom.js"></script> 
+    <!-- Load 'Geocap' variable -->
+    <script src="./dist/bundle.js">
 
-    <!-- Main -->
-
-    <script src="./dist/bundle.js"></script>
-
-     
-    <script>
-        //import * as FIDO from "./dist/bundle.js"
-        ReactDOM.render(
-            React.createElement(GeocapApp, { companyName : "Geocap",  appName : "Geocap Subsurface Server" , version :"1.5"  }, null),
-            document.getElementById('root')
-        );
     </script>
+    <script>
+        function geocapRender() {
+            ReactDOM.render(
+                React.createElement(Geocap.App, { companyName: "Geocap", appName: "Geocap Subsurface Server", version: "1.5" }, null),
+                document.getElementById('root')
+            );
+        }
+
+        geocapRender();
+    </script>
+
+
+
+
 
 </body>
 
