@@ -38,6 +38,9 @@ let ro: ReadonlyArray<number> = a;
 ```
 
 
-skille mellom interface og abstract class (som kan innehold implemtatation)
+* skille mellom interface og abstract class (som kan innehold implemtatation). 
+
+* Bruk (this : MyType) som argument i metoder for å fortelle kompileren hvilken type this er
+* union type
 
 
