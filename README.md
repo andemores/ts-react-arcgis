@@ -38,3 +38,6 @@ let ro: ReadonlyArray<number> = a;
 ```
 
 
+skille mellom interface og abstract class (som kan innehold implemtatation)
+
+
