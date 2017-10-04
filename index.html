@@ -5,8 +5,11 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
-    <link rel="stylesheet" href="https://js.arcgis.com/4.4/esri/css/main.css">
-
+    <!-- 
+<link rel="stylesheet" href="https://js.arcgis.com/4.4/esri/css/main.css">
+    -->
+    
+    <link rel="stylesheet" href="https://js.arcgis.com/3.22/esri/css/esri.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -56,7 +59,7 @@
     <script>
         function geocapRender() {
             ReactDOM.render(
-                React.createElement(Geocap.App, { companyName: "Geocap", appName: "Geocap Subsurface Server", version: "1.5" }, null),
+                React.createElement(Geocap.App, { companyName: "Geocap", appName: "Geocap Subsurface Server", version: "1.6" }, null),
                 document.getElementById('root')
             );
         }
