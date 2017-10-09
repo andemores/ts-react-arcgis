@@ -51,7 +51,7 @@ export class GCToolbar extends React.Component<ToolbarProps, null> {
     constructor(props: any) {
         super(props);
         this.state = {
-            open : false,
+            open: false,
             value: 3
         };
 
@@ -83,23 +83,23 @@ export class GCToolbar extends React.Component<ToolbarProps, null> {
         console.log("URL is " + newValue);
 
     }
-    
+
     handleChange = (event: any, index: number, value: any) => this.setState({ value });
 
     render() {
         const actions = [
             <FlatButton
-              label="Cancel"
-              primary={true}
-              onClick={this.handleAddServiceCancel}
+                label="Cancel"
+                primary={true}
+                onClick={this.handleAddServiceCancel}
             />,
             <FlatButton
-              label="Submit"
-              primary={true}
-              keyboardFocused={true}
-              onClick={this.handleAddServiceSubmit}
+                label="Submit"
+                primary={true}
+                keyboardFocused={true}
+                onClick={this.handleAddServiceSubmit}
             />,
-          ];
+        ];
 
         return (
 
@@ -111,11 +111,11 @@ export class GCToolbar extends React.Component<ToolbarProps, null> {
                     open={this.state.open}
                     onRequestClose={this.handleAddServiceClose}
                 >
-                <TextField fullWidth= { true }  onChange = { this.handleAddUrlChange } hintText= "https://myserver.com/arcgis/rest/services/myservice/MapServer/0">
+                    <TextField fullWidth={true} onChange={this.handleAddUrlChange} hintText="https://myserver.com/arcgis/rest/services/myservice/MapServer/0">
                     </TextField>
-                    
-        </Dialog>
-                <FloatingActionButton mini={false} style={style1} onClick={ this.handleAddServiceOpen}>
+
+                </Dialog>
+                <FloatingActionButton mini={false} style={style1} onClick={this.handleAddServiceOpen}>
                     <ContentAdd />
                 </FloatingActionButton>
                 <ToolbarTitle text={this.props.title} />
